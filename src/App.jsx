@@ -1,35 +1,29 @@
 import React from "react";
+import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from './components/Navbar';
 import HomePage from './components/HomePage';
-// import ShopPage from './components/ShopPage';
+import { useState } from "react";
+import { Outlet } from 'react-router-dom'
 
 
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <HomePage />
-  },
-  {
-    path: '/shop',
-    element: <ShopPage addToCart={addToCart} />,
-  },
-])
 
 
 function App() {
-  const [cart, setCart] = useState([]);
 
-  const addToCart = (product, quantity) => {
-    setCart([...cart, { ...product, quantity }]);
-  };
+
+
 
   return (
     <div>
-      <Navbar cartCount={cart.length} />
-      <RouterProvider router={router} />
+      <Navbar />
+      <Outlet />
+      
     </div>
+     
+      
+    
   )
 }
 
