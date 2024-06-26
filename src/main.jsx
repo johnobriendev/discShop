@@ -5,6 +5,7 @@ import './index.css'
 import Navbar from './components/Navbar.jsx'
 import HomePage from './components/HomePage.jsx'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Discs from './components/Discs.jsx';
 
 
 
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
         path: '/',
         element: <HomePage />,
     },
+    {
+      path: '/discs',
+      element: <Discs />,
+  },
     ]
   },
 

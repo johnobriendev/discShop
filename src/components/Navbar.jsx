@@ -9,7 +9,7 @@ const Navbar = ({ cartCount }) => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/shop">Shop</Link>
+          <Link to="/discs">Shop</Link>
         </li>
         <li>
           Cart ({cartCount})
