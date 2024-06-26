@@ -5,7 +5,8 @@ import './index.css'
 import HomePage from './components/HomePage.jsx'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Discs from './components/Discs.jsx';
-import { CartProvider } from '../contexts/CartContext.jsx'
+import CartPage from './components/CartPage.jsx'
+import { CartProvider } from './contexts/CartContext.jsx'
 
 
 
@@ -18,11 +19,15 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <HomePage />,
-    },
-    {
-      path: '/discs',
-      element: <Discs />,
-  },
+      },
+      {
+        path: '/discs',
+        element: <Discs />,
+     },
+     {
+      path: '/cart',
+      element: <CartPage />,
+   },
     ]
   },
 
@@ -30,10 +35,12 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <CartProvider>
     <RouterProvider router={router}>
-      <CartProvider>
+      
         <App />
-      </CartProvider>
+    
     </RouterProvider>
+    </CartProvider>
   </React.StrictMode>,
-)
+);

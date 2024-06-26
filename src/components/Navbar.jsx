@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from '../contexts/CartContext';
 
 const Navbar = ({ cartCount }) => {
+  const { cartItems } = useCart();
+  
   return (
     <nav className='flex justify-between mb-5'>
       <h1 className='text-4xl'>Barry's Disc Shop</h1>
@@ -13,7 +16,7 @@ const Navbar = ({ cartCount }) => {
           <Link to="/discs">Shop</Link>
         </li>
         <li>
-          Cart ({cartCount})
+          <Link to="/cart">Cart ({cartCount})</Link>
         </li>
       </ul>
     </nav>
