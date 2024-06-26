@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import Navbar from './components/Navbar.jsx'
 import HomePage from './components/HomePage.jsx'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Discs from './components/Discs.jsx';
