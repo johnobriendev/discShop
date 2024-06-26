@@ -1,4 +1,5 @@
 import React from "react";
+import getDiscs from "../services/fetch";
 
 const Discs = () => {
   return(
