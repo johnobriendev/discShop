@@ -1,8 +1,9 @@
 import React from 'react';
+import { useCart } from '../contexts/CartContext';
 
 
 const DiscCard = ({ disc }) => {
-  // const { addToCart } = useCart();
+  const { addToCart } = useCart();
 
   const handleAddToCart = () => {
     addToCart(disc);
