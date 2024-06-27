@@ -14,7 +14,7 @@ const DiscCard = ({ disc }) => {
   return (
     <div className="my-4">
       <img className='w-[300px]' src={disc.photo} alt={disc.disc.name} />
-      <h3>{disc.disc.name}</h3>
+      <h3 className='text-xl'>{disc.plastic} {disc.disc.name}</h3>
       <p>Color: {disc.color}</p>
       <p>Plastic: {disc.plastic}</p>
       <p>Weight: {disc.weight}g</p>

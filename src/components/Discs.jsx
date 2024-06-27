@@ -20,7 +20,7 @@ const Discs = () => {
   }, []);
   
   return(
-    <div className="">
+    <div className="flex flex-col items-center sm:grid sm:grid-cols-2 sm:gap-4 md:grid md:grid-cols-3 md:gap-4">
       {discs.map((disc) => (
         <DiscCard  key={disc._id} disc={disc} />
       ))}
