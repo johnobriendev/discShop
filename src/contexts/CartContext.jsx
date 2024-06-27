@@ -9,8 +9,20 @@ export const useCart = () => {
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
+  // const addToCart = (disc) => {
+  //   setCartItems([...cartItems, disc]);
+  // };
+
   const addToCart = (disc) => {
-    setCartItems([...cartItems, disc]);
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find(item => item._id === disc._id);
+      if (existingItem) {
+        return prevItems.map(item => 
+          item._id === disc._id ? { ...item, quantity: item.quantity + 1 } : item
+        );
+      }
+      return [...prevItems, { ...disc, quantity: 1 }];
+    });
   };
 
   const removeFromCart = (discId) => {
