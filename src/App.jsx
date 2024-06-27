@@ -9,13 +9,13 @@ import { useCart } from './contexts/CartContext';
 
 
 function App() {
-  const { cartItems } = useCart();
+  const { getTotalQuantity} = useCart();
   const [cartCount, setCartCount] = useState(0);
 
   // Update cart count whenever cartItems change
   useEffect(() => {
-    setCartCount(cartItems.length);
-  }, [cartItems]);
+    setCartCount(getTotalQuantity);
+  }, [getTotalQuantity]);
   
   
   return (
