@@ -11,7 +11,7 @@ const CartPage = () => {
           <div key={item._id} className="flex items-center gap-4 border-b pb-4">
             <img src={item.photo} alt={item.disc.name} className="w-16 h-16 object-cover" />
             <div className="flex-grow">
-              <h2 className="text-xl">{item.disc.name}</h2>
+              <h2 className="text-xl">{item.plastic} {item.disc.name}</h2>
               <p>Color: {item.color}</p>
               <p>Plastic: {item.plastic}</p>
               <p>Weight: {item.weight}g</p>
