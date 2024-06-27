@@ -12,14 +12,14 @@ const DiscCard = ({ disc }) => {
   
   
   return (
-    <div className="">
+    <div className="my-4">
       <img className='w-[300px]' src={disc.photo} alt={disc.disc.name} />
       <h3>{disc.disc.name}</h3>
       <p>Color: {disc.color}</p>
       <p>Plastic: {disc.plastic}</p>
       <p>Weight: {disc.weight}g</p>
       <p>Price: ${disc.price}</p>
-      <button onClick={handleAddToCart}>Add to Cart</button>
+      <button className='border border-black rounded p-1' onClick={handleAddToCart}>Add to Cart</button>
     </div>
   );
 };

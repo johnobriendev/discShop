@@ -22,7 +22,7 @@ const Discs = () => {
   return(
     <div className="">
       {discs.map((disc) => (
-        <DiscCard key={disc._id} disc={disc} />
+        <DiscCard  key={disc._id} disc={disc} />
       ))}
     </div>
   )
