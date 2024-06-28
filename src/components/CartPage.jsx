@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCart } from '../contexts/CartContext';
 const CartPage = () => {
-  const { cartItems, getTotalPrice, getTotalQuantity } = useCart();
+  const { cartItems, getTotalPrice, getTotalQuantity, updateItemQuantity, removeFromCart } = useCart();
 
   return (
     <div className="container mx-auto p-4">
@@ -15,8 +15,28 @@ const CartPage = () => {
               <p>Color: {item.color}</p>
               <p>Plastic: {item.plastic}</p>
               <p>Weight: {item.weight}g</p>
-              <p>Quantity: {item.quantity}</p>
+              <div className="flex items-center">
+                <button
+                  onClick={() => updateItemQuantity(item._id, -1)}
+                  className="px-2 py-1 bg-gray-200 rounded"
+                >
+                  -
+                </button>
+                <p className="mx-2">{item.quantity}</p>
+                <button
+                  onClick={() => updateItemQuantity(item._id, 1)}
+                  className="px-2 py-1 bg-gray-200 rounded"
+                >
+                  +
+                </button>
+              </div>
               <p>Price: ${item.price}</p>
+              <button
+                onClick={() => removeFromCart(item._id)}
+                className="px-2 py-1 bg-red-500 text-white rounded"
+              >
+                Remove
+              </button>
             </div>
             <div className="text-right">
               <p>Total: ${item.price * item.quantity}</p>
