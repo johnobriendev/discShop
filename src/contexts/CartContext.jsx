@@ -29,6 +29,12 @@ export const CartProvider = ({ children }) => {
     setCartItems(cartItems.filter(item => item._id !== discId));
   };
 
+  const updateItemQuantity = (discId, quantity) => {
+    setCartItems(cartItems.map(item =>
+      item._id === discId ? { ...item, quantity: Math.max(1, item.quantity + quantity) } : item
+    ));
+  };
+
   const clearCart = () => {
     setCartItems([]);
   };
@@ -42,7 +48,7 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart, getTotalPrice, getTotalQuantity }}>
+    <CartContext.Provider value={{ cartItems, addToCart, updateItemQuantity, removeFromCart, clearCart, getTotalPrice, getTotalQuantity }}>
       {children}
     </CartContext.Provider>
   );
