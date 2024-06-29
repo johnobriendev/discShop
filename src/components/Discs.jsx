@@ -23,14 +23,20 @@ const Discs = () => {
   
   
   return(
-    <div className="flex flex-col items-center sm:grid sm:grid-cols-2 sm:gap-4 md:grid md:grid-cols-3 md:gap-4">
+    <div className="flex flex-col items-center">
     {loading ? (
         <div className="text-xl">Loading discs...</div> // Display loading message
       ) : (
         
-        discs.map((disc) => (
-          <DiscCard key={disc._id} disc={disc} />
-        ))
+        <>
+          <h1 className="text-2xl mb-4">Shop All Discs</h1>
+          <div className="sm:grid sm:grid-cols-2 sm:gap-4 md:grid md:grid-cols-3 md:gap-4">
+            {discs.map((disc) => (
+              <DiscCard key={disc._id} disc={disc} />
+            ))}
+          </div>
+        </>
+        
       )}
 
     </div>
