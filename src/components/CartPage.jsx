@@ -1,7 +1,15 @@
 import React from 'react';
 import { useCart } from '../contexts/CartContext';
 const CartPage = () => {
-  const { cartItems, getTotalPrice, getTotalQuantity, updateItemQuantity, removeFromCart } = useCart();
+  const { cartItems, getTotalPrice, getTotalQuantity, updateCartItemQuantity, removeFromCart } = useCart();
+
+  const handleQuantityChange = (item, amount) => {
+    if (item.quantity + amount > 0) {
+      updateCartItemQuantity(item._id, item.quantity + amount);
+    } else {
+      removeFromCart(item._id);
+    }
+  };
 
   return (
     <div className="container mx-auto p-4">
@@ -15,20 +23,10 @@ const CartPage = () => {
               <p>Color: {item.color}</p>
               <p>Plastic: {item.plastic}</p>
               <p>Weight: {item.weight}g</p>
-              <div className="flex items-center">
-                <button
-                  onClick={() => updateItemQuantity(item._id, -1)}
-                  className="px-2 py-1 bg-gray-200 rounded"
-                >
-                  -
-                </button>
-                <p className="mx-2">{item.quantity}</p>
-                <button
-                  onClick={() => updateItemQuantity(item._id, 1)}
-                  className="px-2 py-1 bg-gray-200 rounded"
-                >
-                  +
-                </button>
+              <div className="flex items-center gap-2">
+                <button onClick={() => handleQuantityChange(item, -1)} className="px-2 py-1 bg-gray-200">-</button>
+                <span>{item.quantity}</span>
+                <button onClick={() => handleQuantityChange(item, 1)} className="px-2 py-1 bg-gray-200">+</button>
               </div>
               <p>Price: ${item.price}</p>
               <button
