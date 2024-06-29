@@ -22,7 +22,7 @@ function App() {
     <div className="m-5">
      
       <Navbar cartCount={cartCount} />
-      <div className="pt-20">   <Outlet /></div>
+      <div className="pt-36">   <Outlet /></div>
    
      
     </div>  

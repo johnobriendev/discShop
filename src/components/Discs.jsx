@@ -27,6 +27,7 @@ const Discs = () => {
     {loading ? (
         <div className="text-xl">Loading discs...</div> // Display loading message
       ) : (
+        
         discs.map((disc) => (
           <DiscCard key={disc._id} disc={disc} />
         ))
