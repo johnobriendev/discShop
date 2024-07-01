@@ -33,7 +33,7 @@ export const CartProvider = ({ children }) => {
       const existingItem = prevItems.find(item => item._id === disc._id);
       if (existingItem) {
         return prevItems.map(item => 
-          item._id === disc._id ? { ...item, quantity: item.quantity + 1 } : item
+          item._id === disc._id ? { ...item, quantity: item.quantity + quantity } : item
         );
       }
       return [...prevItems, { ...disc, quantity}];
