@@ -11,9 +11,6 @@ const Navbar = ({ cartCount }) => {
         <Link className='text-4xl' to="/">Barry's Disc Shop</Link>
         <ul className='flex gap-5 text-xl'>
           <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
             <Link to="/discs">Shop</Link>
           </li>
           <li>
