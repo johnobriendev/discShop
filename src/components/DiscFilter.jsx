@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 const DiscFilter = ({onFilterChange}) => {
   const [filters, setFilters] = useState({
@@ -22,10 +23,10 @@ const DiscFilter = ({onFilterChange}) => {
         <label className="block mb-2">Type</label>
         <select name="type" value={filters.type} onChange={handleChange} className="w-full p-2 border">
           <option value="">All</option>
-          <option value="distance driver">Distance Driver</option>
-          <option value="fairway driver">Fairway Driver</option>
-          <option value="midrange">Midrange</option>
-          <option value="putter">Putter</option>
+          <option value="Distance Driver">Distance Driver</option>
+          <option value="Fairway Driver">Fairway Driver</option>
+          <option value="Midrange">Midrange</option>
+          <option value="Putter">Putter</option>
         </select>
       </div>
       <div className="mb-4">
