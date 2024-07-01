@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCart } from '../contexts/CartContext';
+import { Link } from 'react-router-dom';
 
 
 const DiscCard = ({ disc }) => {
@@ -14,7 +15,11 @@ const DiscCard = ({ disc }) => {
   return (
     <div className="my-4">
       <img className='w-[300px]' src={disc.photo} alt={disc.disc.name} />
-      <h3 className='text-xl'>{disc.plastic} {disc.disc.name}</h3>
+     
+      <Link to={`/discs/${disc._id}`} className="block">
+        <h3 className='text-xl'>{disc.plastic} {disc.disc.name}</h3>
+      </Link>  
+      
       <p>Color: {disc.color}</p>
       <p>Plastic: {disc.plastic}</p>
       <p>Weight: {disc.weight}g</p>

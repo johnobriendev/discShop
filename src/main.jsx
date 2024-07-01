@@ -5,6 +5,7 @@ import './index.css'
 import HomePage from './components/HomePage.jsx'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Discs from './components/Discs.jsx';
+import DiscDetail from './components/DiscDetail.jsx'
 import CartPage from './components/CartPage.jsx'
 import { CartProvider } from './contexts/CartContext.jsx'
 
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
         path: '/discs',
         element: <Discs />,
      },
+     {
+      path: '/discs/:id',
+      element: <DiscDetail />,
+    },
      {
       path: '/cart',
       element: <CartPage />,
