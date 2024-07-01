@@ -7,7 +7,7 @@ const DiscCard = ({ disc }) => {
   const { addToCart } = useCart();
 
   const handleAddToCart = () => {
-    addToCart(disc);
+    addToCart(disc, 1);
   };
 
   

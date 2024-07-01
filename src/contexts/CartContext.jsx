@@ -28,7 +28,7 @@ export const CartProvider = ({ children }) => {
   //   setCartItems([...cartItems, disc]);
   // };
 
-  const addToCart = (disc) => {
+  const addToCart = (disc, quantity) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find(item => item._id === disc._id);
       if (existingItem) {
@@ -36,7 +36,7 @@ export const CartProvider = ({ children }) => {
           item._id === disc._id ? { ...item, quantity: item.quantity + 1 } : item
         );
       }
-      return [...prevItems, { ...disc, quantity: 1 }];
+      return [...prevItems, { ...disc, quantity}];
     });
   };
 
