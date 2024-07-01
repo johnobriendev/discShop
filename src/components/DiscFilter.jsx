@@ -16,6 +16,18 @@ const DiscFilter = ({onFilterChange}) => {
     onFilterChange({ ...filters, [name]: value });
   };
 
+  const handleClearFilters = () => {
+    const initialFilters = {
+      type: '',
+      weight: '',
+      color: '',
+      price: '',
+      plastic: ''
+    };
+    setFilters(initialFilters);
+    onFilterChange(initialFilters);
+  };
+
   return (
     <div className="p-4 border-b md:border-r md:border-b-0">
       <h2 className="text-xl font-bold mb-4">Filter Discs</h2>
@@ -70,6 +82,12 @@ const DiscFilter = ({onFilterChange}) => {
           <option value="high-to-low">High to Low</option>
         </select>
       </div>
+      <button
+        onClick={handleClearFilters}
+        className="w-full rounded border p-2 mt-4"
+      >
+        Clear All Filters
+      </button>
     </div>
   );
 };
