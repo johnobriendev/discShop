@@ -25,7 +25,7 @@ const Discs = () => {
   }, []);
   
   const handleFilterChange = (filters) => {
-    let updatedDiscs = discs;
+    let updatedDiscs = [...discs];
 
     if (filters.type) {
       updatedDiscs = updatedDiscs.filter(disc => disc.disc.disctype.name === filters.type);
@@ -63,25 +63,7 @@ const Discs = () => {
     </div>
   );
   
-  // return(
-  //   <div className="flex flex-col items-center">
-  //   {loading ? (
-  //       <div className="text-xl">Loading discs...</div> // Display loading message
-  //     ) : (
-        
-  //       <>
-  //         <h1 className="text-2xl mb-4">Shop All Discs</h1>
-  //         <div className="sm:grid sm:grid-cols-2 sm:gap-4 md:grid md:grid-cols-3 md:gap-4">
-  //           {discs.map((disc) => (
-  //             <DiscCard key={disc._id} disc={disc} />
-  //           ))}
-  //         </div>
-  //       </>
-        
-  //     )}
 
-  //   </div>
-  // )
 }
 
 export default Discs;
