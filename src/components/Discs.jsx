@@ -7,7 +7,7 @@ const Discs = () => {
   const [discs, setDiscs] = useState([]);
   const [filteredDiscs, setFilteredDiscs] = useState([]);
   const [loading, setLoading] = useState(true); // Add loading state
-  const [showFilters, setShowFilters] = useState(true); 
+  const [showFilters, setShowFilters] = useState(false); 
 
   useEffect(() => {
     const fetchDiscs = async () => {
@@ -49,10 +49,10 @@ const Discs = () => {
 
   return (
     <div className="flex flex-col gap-10 md:flex-row">
-      <div className="md:w-1/4">
+      <div className="md:w-[220px]">
         <button
           onClick={() => setShowFilters(!showFilters)}
-          className="w-full bg-blue-500 text-white p-2 mb-4 md:hidden"
+          className="w-full bg-blue-500 text-white p-2 mb-4 "
         >
           {showFilters ? "Hide Filters" : "Show Filters"}
         </button>
