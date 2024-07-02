@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useCart } from '../contexts/CartContext';
 import getDiscs from '../services/fetch'; // Assuming this fetches all discs
 
@@ -8,6 +8,7 @@ const DiscDetail = () => {
   const { addToCart } = useCart();
   const [disc, setDisc] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchDisc = async () => {
@@ -32,22 +33,23 @@ const DiscDetail = () => {
 
   const handleAddToCart = () => {
     addToCart(disc, quantity);
+    navigate('/cart');
   };
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">{disc.plastic} {disc.disc.name}</h1>
+      <h1 className="text-2xl font-medium mb-4">{disc.plastic} {disc.disc.name}</h1>
       <img src={disc.photo} alt={disc.disc.name} className="w-64 h-64 object-cover mb-4" />
       <p>Color: {disc.color}</p>
       <p>Plastic: {disc.plastic}</p>
       <p>Weight: {disc.weight}g</p>
       <p>Price: ${disc.price}</p>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-4 my-6">
         <button onClick={() => handleQuantityChange(-1)} className="px-2 py-1 bg-gray-200">-</button>
         <span>{quantity}</span>
         <button onClick={() => handleQuantityChange(1)} className="px-2 py-1 bg-gray-200">+</button>
       </div>
-      <button className='border border-black rounded p-1 mt-2' onClick={handleAddToCart}>Add to Cart</button>
+      <button className='border border-black rounded p-2 mt-2' onClick={handleAddToCart}>Add to Cart</button>
     </div>
   );
 };

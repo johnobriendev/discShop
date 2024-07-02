@@ -8,7 +8,7 @@ const Navbar = ({ cartCount }) => {
   return (
     <nav className=' fixed top-0 left-0 w-full shadow-md bg-white z-10 p-4'>
       <div className='flex justify-between mx-auto items-center'>
-        <Link className='text-4xl' to="/">Barry's Disc Shop</Link>
+        <Link className='font-semibold text-2xl md:text-4xl' to="/">Barry's Disc Shop</Link>
         <ul className='flex gap-5 text-xl'>
           <li>
             <Link to="/discs">Shop</Link>

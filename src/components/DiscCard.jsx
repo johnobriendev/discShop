@@ -15,7 +15,7 @@ const DiscCard = ({ disc }) => {
   return (
     <div className="my-4 flex flex-col items-center">
       <Link to={`/discs/${disc._id}`} className="block">
-      <img className='w-[300px]' src={disc.photo} alt={disc.disc.name} />
+      <img className='w-[260px]' src={disc.photo} alt={disc.disc.name} />
       </Link>
       <Link to={`/discs/${disc._id}`} className="block">
         <h3 className='text-2xl font-bold'>{disc.plastic} {disc.disc.name}</h3>
@@ -25,7 +25,7 @@ const DiscCard = ({ disc }) => {
       <p>Plastic: {disc.plastic}</p>
       <p>Weight: {disc.weight}g</p>
       <p>Price: ${disc.price}</p>
-      <button className='border border-black rounded p-1' onClick={handleAddToCart}>Add to Cart</button>
+      <button className='border border-black rounded p-2' onClick={handleAddToCart}>Add to Cart</button>
     </div>
   );
 };

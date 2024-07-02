@@ -43,7 +43,7 @@ const CartPage = () => {
               </button>
             </div>
             <div className="text-right">
-              <p>Total: ${item.price * item.quantity}</p>
+              <p>Total: ${(item.price * item.quantity).toFixed(2)}</p>
             </div>
           </div>
         ))}
