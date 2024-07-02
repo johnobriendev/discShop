@@ -1,5 +1,7 @@
 import React from 'react';
 import { useCart } from '../contexts/CartContext';
+import { Link } from 'react-router-dom';
+
 const CartPage = () => {
   const { cartItems, getTotalPrice, getTotalQuantity, updateCartItemQuantity, removeFromCart } = useCart();
 
@@ -17,9 +19,13 @@ const CartPage = () => {
       <div className="flex flex-col gap-4">
         {cartItems.map(item => (
           <div key={item._id} className="flex items-center gap-4 border-b pb-4">
-            <img src={item.photo} alt={item.disc.name} className="w-16 h-16 object-cover" />
+            <Link to={`/discs/${item._id}`} className="">
+              <img src={item.photo} alt={item.disc.name} className="w-24 h-24 object-cover" />
+            </Link>  
             <div className="flex-grow">
-              <h2 className="text-xl">{item.plastic} {item.disc.name}</h2>
+              <Link to={`/discs/${item._id}`} className="">
+                <h2 className="text-xl">{item.plastic} {item.disc.name}</h2>
+              </Link>    
               <p>Color: {item.color}</p>
               <p>Plastic: {item.plastic}</p>
               <p>Weight: {item.weight}g</p>
