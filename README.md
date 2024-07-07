@@ -21,7 +21,7 @@ The frontend application allows users to:
 - **Vite**: Next Generation Frontend Tooling
 - **Tailwind CSS**: Utility-first CSS framework
 - **React Router**: Declarative routing for React
-- **Context API: State Management for React
+- Context API: State Management for React
 
 ## Getting Started
 
