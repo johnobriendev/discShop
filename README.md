@@ -2,7 +2,7 @@
 
 This project is the frontend for the Disc Inventory Management System, designed to support a Disc Golf Store's inventory management and e-commerce functionalities. It is built using React and Vite.
 
-The backend API can be found here: [Link](https://github.com/johnobriendev/discShop)
+The backend API can be found here: [Link](https://github.com/johnobriendev/discAPI)
 
 The admin view can be found here: [Link](https://debonair-rounded-opinion.glitch.me/catalog)
 
