@@ -71,9 +71,11 @@ The application will be running at http://localhost:5173.
 
 ## Usage
 ### Routes
-/ : Home page displaying all discs
+/ : Home page 
 
-/discs/ : Detailed view of a specific disc
+/discs : Page displaying all discs and a filter
+
+/discs/:id : Detailed view of a specific disc
 
 /cart : Shopping cart page
 
