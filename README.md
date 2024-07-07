@@ -71,10 +71,11 @@ The application will be running at http://localhost:5173.
 
 ## Usage
 ### Routes
-/: Home page displaying all discs
-/discs/
-: Detailed view of a specific disc
-/cart: Shopping cart page
+/ : Home page displaying all discs
+
+/discs/ : Detailed view of a specific disc
+
+/cart : Shopping cart page
 
 ### Components
 Navbar: Displays the navigation menu
