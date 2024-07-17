@@ -19,7 +19,7 @@ function App() {
   
   
   return (
-    <div className="font-monserrat bg-slate-200 h-full w-full">
+    <div className="font-monserrat bg-slate-200">
      
       <Navbar cartCount={cartCount} />
       <div className="pt-24">   <Outlet /></div>

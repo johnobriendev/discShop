@@ -8,7 +8,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className='flex flex-col items-center gap-5 h-screen'>
+    <div className='flex flex-col items-center gap-5 min-h-screen'>
       <h1 className={`text-2xl transition-all duration-1000 transform ${isLoaded ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
         Welcome to Barry's Disc Shop
       </h1>
