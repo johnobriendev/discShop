@@ -37,7 +37,7 @@ const DiscDetail = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 h-screen">
       <h1 className="text-2xl font-medium mb-4">{disc.plastic} {disc.disc.name}</h1>
       <img src={disc.photo} alt={disc.disc.name} className="w-64 h-64 object-cover mb-4" />
       <p>Color: {disc.color}</p>
