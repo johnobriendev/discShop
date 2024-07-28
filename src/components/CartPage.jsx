@@ -34,13 +34,13 @@ const CartPage = () => {
   }, [cartItems, shippingOption, getTotalPrice]);
 
   return (
-    <div className="container mx-auto px-4 pb-20 min-h-screen">
+    <div className="container mx-auto px-4 pt-12 pb-20 min-h-screen">
       <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
       <div className="flex flex-col gap-4">
         {cartItems.map(item => (
           <div key={item._id} className="flex items-center gap-4 border-b pb-4">
             <Link to={`/discs/${item._id}`} className="">
-              <img src={item.photo} alt={item.disc.name} className="w-24 h-24 object-cover" />
+              <img src={item.photo} alt={item.disc.name} className="w-24 h-24 object-cover sm:h-36 sm:w-36 md:h-48 md:w-48" />
             </Link>  
             <div className="flex-grow">
               <Link to={`/discs/${item._id}`} className="">
@@ -50,9 +50,9 @@ const CartPage = () => {
               <p>Plastic: {item.plastic}</p>
               <p>Weight: {item.weight}g</p>
               <div className="flex items-center gap-2">
-                <button onClick={() => handleQuantityChange(item, -1)} className="px-2 py-1 bg-gray-200">-</button>
+                <button onClick={() => handleQuantityChange(item, -1)} className="px-2 py-1 bg-white rounded border border-black">-</button>
                 <span>{item.quantity}</span>
-                <button onClick={() => handleQuantityChange(item, 1)} className="px-2 py-1 bg-gray-200">+</button>
+                <button onClick={() => handleQuantityChange(item, 1)} className="px-2 py-1 bg-white rounded border border-black">+</button>
               </div>
               <p>Price: ${item.price}</p>
               <button
@@ -100,7 +100,7 @@ const CartPage = () => {
             </div>
           </div>
           
-          <p className="mt-4 font-bold">Total with Shipping: ${totalWithShipping.toFixed(2)}</p>
+          <p className="mt-4 font-bold">Total with Shipping: </p>
           
           {getTotalPrice() < FREE_SHIPPING_THRESHOLD && (
             <p className="mt-2 text-sm text-gray-600">

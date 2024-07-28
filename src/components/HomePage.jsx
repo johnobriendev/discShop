@@ -9,7 +9,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen pt-8 px-4">
+    <div className="min-h-screen pt-12 px-4">
       <div className="max-w-3xl mx-auto">
         <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 overflow-hidden">
           <div className="relative">

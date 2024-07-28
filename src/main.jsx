@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Discs from './components/Discs.jsx';
 import DiscDetail from './components/DiscDetail.jsx'
 import CartPage from './components/CartPage.jsx'
+import CheckoutPage from './components/CheckoutPage.jsx'
 import { CartProvider } from './contexts/CartContext.jsx'
 
 
@@ -32,7 +33,11 @@ const router = createBrowserRouter([
      {
       path: '/cart',
       element: <CartPage />,
-   },
+    },
+    {
+      path: '/checkout',
+      element: <CheckoutPage />,
+    },
     ]
   },
 

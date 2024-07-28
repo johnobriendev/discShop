@@ -48,7 +48,7 @@ const Discs = () => {
   };
 
   return (
-    <div className="flex flex-col gap-10 min-h-screen px-5 md:flex-row">
+    <div className="flex flex-col gap-10 min-h-screen px-5 pt-12 md:flex-row">
       <div className="md:w-[220px]">
         <button
           onClick={() => setShowFilters(!showFilters)}

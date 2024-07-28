@@ -45,11 +45,11 @@ const DiscDetail = () => {
       <p>Weight: {disc.weight}g</p>
       <p>Price: ${disc.price}</p>
       <div className="flex items-center gap-4 my-6">
-        <button onClick={() => handleQuantityChange(-1)} className="px-2 py-1 bg-gray-200">-</button>
+        <button onClick={() => handleQuantityChange(-1)} className="px-2 py-1 bg-white rounded border border-black">-</button>
         <span>{quantity}</span>
-        <button onClick={() => handleQuantityChange(1)} className="px-2 py-1 bg-gray-200">+</button>
+        <button onClick={() => handleQuantityChange(1)} className="px-2 py-1 bg-white rounded border border-black">+</button>
       </div>
-      <button className='border border-black rounded p-2 mt-2' onClick={handleAddToCart}>Add to Cart</button>
+      <button className='border border-black bg-white rounded p-2 mt-2' onClick={handleAddToCart}>Add to Cart</button>
     </div>
   );
 };
