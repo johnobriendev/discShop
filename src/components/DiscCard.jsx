@@ -14,10 +14,10 @@ const DiscCard = ({ disc }) => {
   
   return (
     <div className="my-4 flex flex-col items-center">
-      <Link to={`/discs/${disc._id}`} className="block hover:scale-105 mb-5">
+      <Link to={`/discs/${disc._id}`} className="block md:hover:scale-105 mb-5">
       <img className='w-[260px]' src={disc.photo} alt={disc.disc.name} />
       </Link>
-      <Link to={`/discs/${disc._id}`} className="block hover:scale-105">
+      <Link to={`/discs/${disc._id}`} className="block md:hover:scale-105">
         <h3 className='text-2xl font-bold'>{disc.plastic} {disc.disc.name}</h3>
       </Link>  
       

@@ -100,7 +100,7 @@ const CartPage = () => {
             </div>
           </div>
           
-          <p className="mt-4 font-bold">Total with Shipping: </p>
+          <p className="mt-4 font-bold">Total with Shipping: {(totalWithShipping).toFixed(2)} </p>
           
           {getTotalPrice() < FREE_SHIPPING_THRESHOLD && (
             <p className="mt-2 text-sm text-gray-600">
