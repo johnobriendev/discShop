@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from 'react';
-// import Select from 'react-select';
-// import countryList from 'react-select-country-list';
 import { useCart } from '../contexts/CartContext';
+
+
+import {
+  CitySelect,
+  CountrySelect,
+  StateSelect,
+  LanguageSelect,
+} from "react-country-state-city";
+import "react-country-state-city/dist/react-country-state-city.css";
 
 
 const CheckoutPage = ()=> {
 
-  const [country, setCountry] = useState('');
-  const [region, setRegion] = useState('');
+
+  const [countryid, setCountryid] = useState(0);
+  const [stateid, setstateid] = useState(0);
 
 
   const { cartItems, getTotalPrice, getTotalQuantity, updateCartItemQuantity, removeFromCart } = useCart();
@@ -44,7 +52,7 @@ const CheckoutPage = ()=> {
     <div className="min-h-screen max-h-full mx-8 pt-12 pb-36 ">
       <form className="flex flex-col md:flex-row gap-10">
         <div className="w-full flex flex-col gap-4">
-          <h2>Billing Details</h2>
+          <h2 className='text-xl font-medium'>Billing Details</h2>
 
           <div className="flex flex-col md:flex-row gap-5">
             <div className='flex flex-col'>
@@ -64,13 +72,22 @@ const CheckoutPage = ()=> {
 
           <div>
             <label>Country</label>
+         
+
+          
+            <CountrySelect
+              onChange={(e) => {
+                setCountryid(e.id);
+              }}
+              placeHolder="Select Country"
+            />
           </div>
       
 
           <div className="flex flex-col">
             <label htmlFor="streetAdd"> Street Address *</label>
-            <input type="text" name="streetAdd" required placeholder="House number and street name" className="mb-4 h-12" />
-            <input type="text" name="aptNum" placeholder="Apartment, suite, unit, etc. (Optional)" className='h-12' />
+            <input type="text" name="streetAdd" required placeholder="House number and street name" className="mb-4 h-12 px-2" />
+            <input type="text" name="aptNum" placeholder="Apartment, suite, unit, etc. (Optional)" className='h-12 px-2' />
           </div>
 
           <div className="flex flex-col">
@@ -79,7 +96,15 @@ const CheckoutPage = ()=> {
           </div>
 
           <div>
-            <label>State/Region</label>  
+            <label>State/Region</label>
+          
+            <StateSelect
+              countryid={countryid}
+              onChange={(e) => {
+                setstateid(e.id);
+              }}
+              placeHolder="Select State"
+            />  
           </div>
 
           <div className="flex flex-col">
@@ -97,11 +122,12 @@ const CheckoutPage = ()=> {
             <input className='h-12' type="text" name="city" />
           </div>
 
-          
         </div>
         
-        <div className="w-full">
-          <h2>Your Order</h2>
+        <div className="w-full max-w-[450px] h-full">
+         
+          <h2 className='text-xl font-medium mb-4'>Your Order</h2>
+
           <div className='bg-white h-full flex flex-col'>
             <div className='flex justify-around items-center'>
               <h3 className='p-4'>Product</h3>
@@ -164,14 +190,31 @@ const CheckoutPage = ()=> {
               <p>${totalWithShipping.toFixed(2)}</p>
             </div>
 
-            <div className='flex justify-center items-center p-4'>
+            <div className="mt-4 flex flex-col items-center gap-2 bg-neutral-300 p-4">
+                <div>
+                  <input 
+                    type="radio" 
+                    id="normal" 
+                    name="payment" 
+                    value="credit" 
+                  />
+                  <label htmlFor="credit"> Credit/Debit</label>
+                </div>
+                <div>
+                  <input 
+                    type="radio" 
+                    id="expedited" 
+                    name="payment" 
+                    value="paypak" 
+                    
+                  />
+                  <label htmlFor="expedited">PayPal</label>
+                </div>
+              </div>
+
+            <div className='flex justify-center items-center p-4 bg-neutral-100'>
               <button className='bg-purple-300 p-4 rounded text-xl font-bold w-full hover:bg-purple-400' type="submit">Place Order</button>
             </div>
-
-
-            
-            
-
 
           </div>
         </div>
