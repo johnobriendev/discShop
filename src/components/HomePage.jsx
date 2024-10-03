@@ -14,7 +14,7 @@ const HomePage = () => {
         <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 overflow-hidden">
           <div className="relative">
             <h1 className={`text-center text-3xl md:text-4xl mb-4 transition-all duration-1000 ${isLoaded ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
-              Welcome to Barry's Disc Shop
+              Welcome to the Disc Shop
             </h1>
             <p className={`text-center text-lg md:text-xl text-gray-700 mb-8 transition-all duration-1000 delay-200 ${isLoaded ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
               Your one-stop shop for all your disc needs!
